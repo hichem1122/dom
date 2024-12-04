@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>hello hello</h1>
+  <h1>salem</h1>
+
+  
+  <span id="testSpan" class="attribute">test 12 12</span>
+
+
+  <div>first div</div>
+  <div>second div</div>
+
+
+  <h2 class="className">hahahahaha</h2>
+
+
+  <button id="myBtn">click me</button>
+
+
+  <div id="main">
+  <ul id="list1">
+    <li>item</li>
+  </ul>
+  </div>
+
+
+  <div id="main2">
+    <ul id="liElem">
+      <li>tatatat</li>
+    </ul>
+  </div>
+
+
+  <button id="btn">
+    click this button
+  </button>
+
+
+  <button id="btn2">
+    click this button 2
+  </button>
+
+
+  <script>
+    var el = document.querySelector('h1'); //to select chosen element
+    console.log(el);
+
+
+    var spanElements = document.getElementById('testSpan') //to call for an element by id 
+    console.log('spanElements:',spanElements); //first is title second is element by id
+
+
+    var divElements = document.querySelectorAll('div'); //call for elements with the same name 
+    console.log('divElements',divElements);
+
+
+    var className = document.getElementsByClassName('getElementByClassName')//call for elements with class name
+    console.log('className:',className);
+
+
+    var tagName = document.getElementsByTagName('div') //call for elements by tag name 
+    console.log('tagName',tagName)
+
+
+    var mainEl = document.getElementById('testSpan')
+    console.log(mainEl)                                 //call for attributes
+    var elClassName = mainEl.getAttribute('class')
+    console.log('className',elClassName)
+
+
+    var btn = document.getElementById('myBtn')
+    btn.setAttribute('class','click-btn')         //add or change attribute for the element
+    console.log(btn)
+
+
+    btn.setAttribute('disabled','') //(disabled)=will disable the btn ('')= true
+    btn.setAttribute("style","color:red") //(style..)change the style of the element
+    btn.removeAttribute('id') //removes attribute that i selected
+
+
+    var styleEl = document.getElementById ('testSpan')
+    styleEl.style.color = 'cyan' //change style of the elements 
+
+
+    var list = document.getElementById("list1")
+    var liTest = document.createElement('li')   //to add an element
+    list.appendChild(liTest)
+
+
+    var content = document.getElementById('main').innerHTML
+    console.log('contents',content)     //to show the content within the element
+
+
+    var mainDiv = document.getElementById('main')
+    mainDiv.innerHTML = '<p> blablabla</p>' //(=) means to change content inside the elemnet (+=)means to add content
+    mainDiv.innerHTML += '<p>hello my friend</p>'
+
+
+    var parentElem = document.getElementById('main2')
+    var childElem = document.getElementById('liElem') //to remove a child element inside the parent element
+    parentElem.removeChild(childElem)
+
+
+    var thisBtn = document.getElementById('btn')
+    thisBtn.addEventListener("click",function(){   //to add an event to the btn
+      alert("you clicked on me")
+    })
+
+    var thisBtn2 = document.getElementById('btn2')
+    var tstFunction = function(){ 
+      alert("you clicked on me")
+    }                                                 //to remove an event of the button
+    thisBtn2.addEventListener("click",tstFunction)
+    thisBtn2.removeEventListener("click",tstFunction)
+
+  </script>
+</body>
+</html>
